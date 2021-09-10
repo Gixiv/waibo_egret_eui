@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SceneItemSkin" width="576" height="139" xmlns:e="http://ns.egret.com/eui">
+	<e:Image id="item_bg" width="576" height="139" x="0" y="0" source="bg_item_png"/>
+	<e:Image id="item" width="119" height="114" x="9.5" y="11.54" source="{data.img}"/>
+	<e:Label text="{data.name}" x="161.5" y="21.54" textColor="0xF7FF9F" size="25"/>
+	<e:Label text="单价：000星币/克" x="161.5" y="54.5" size="15"/>
+	<e:Label text="重量：15000克" x="161.5" y="76" size="15"/>
+	<e:Label text="价格：000星币" x="161.5" y="96.5" size="15"/>
+	<e:CheckBox id="itemCheckBox" right="30" top="36">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="checkbox_2_png" source.down="checkbox_1_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:CheckBox>
+</e:Skin>

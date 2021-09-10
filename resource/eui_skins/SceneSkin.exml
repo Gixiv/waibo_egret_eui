@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SceneSkin" width="1334" height="750" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="17bc844a5fd" ></w:Config>
+	<e:Image id="_bg" width="1334" height="750" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" rotation="0.04" source="bg0_jpg"/>
+	<e:Image width="1334" height="750" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" source="bg2_png"/>
+	<e:Button label="" x="48" y="111.91" anchorOffsetX="0" width="258" anchorOffsetY="0" height="61">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="X_png" source.down="X_png" source.disabled="X_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:CheckBox id="all" label="" x="112" y="565.71">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="checkbox_2_png" source.down="checkbox_1_png" source.disabled="checkbox_2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:CheckBox>
+	<e:Button id="ruku" label="" x="734.36" y="560.71" anchorOffsetX="0" width="232" anchorOffsetY="0" height="70">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="R_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button label="" x="1000.36" y="560.71" anchorOffsetX="0" width="232" anchorOffsetY="0" height="70">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="N_png" source.down="N_png" source.disabled="N_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Label text="数量：10/30" x="850.36" y="172.91" textColor="0xf7ff9f"/>
+	<e:Label text="合计币：8000" x="1058.36" y="172.91" textColor="0xF7FF9F"/>
+	<e:Label text="全选" x="204.97" y="583.21"/>
+	<e:Scroller id="sc_beibao" width="1152" height="294" x="90.73" y="228.46" anchorOffsetX="0" anchorOffsetY="0" skinName="skins.ScrollerSkin">
+		<e:List id="beibao" itemRendererSkinName="SceneItemSkin" x="-32" y="0" anchorOffsetX="0" width="1152">
+			<e:layout>
+				<e:TileLayout horizontalGap="0" verticalGap="0"/>
+			</e:layout>
+		</e:List>
+	</e:Scroller>
+</e:Skin>
