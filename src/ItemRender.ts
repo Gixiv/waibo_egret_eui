@@ -7,9 +7,15 @@ class ItemRender extends eui.ItemRenderer{
         this.itemCheckBox.addEventListener(eui.UIEvent.CHANGE, this.check, this);  
         this.addEventListener(eui.UIEvent.CREATION_COMPLETE,this.onComplete,this);
     }
-    private onComplete(){
+
+    public childrenCreated(){
         Scene.instance.checkBoxArr.push(this);
-        console.log(111);
+        console.log(222);
+    }
+
+
+    private onComplete(){
+
     }
     
     public dataChanged():void{
