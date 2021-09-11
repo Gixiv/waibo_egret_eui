@@ -1,6 +1,6 @@
 class Scene extends eui.Component{
 
-private listdataArr:any[] = null;
+public listdataArr:any[] = null;
 
 
 
@@ -10,7 +10,7 @@ public sc_beibao:eui.Scroller;
 public beibao:eui.List;
 public all:eui.CheckBox;
 
-public checkBoxArr:ItemRender[] = [];
+
 public static instance:Scene = null;
 
 
@@ -25,9 +25,6 @@ public static instance:Scene = null;
         this.ruku.addEventListener(egret.TouchEvent.TOUCH_TAP,this.onTapBeibaoBtn,this);
 
         this.all.addEventListener(eui.UIEvent.CHANGE, this.allCheckbox, this);
-
-        console.log(this.all);
-
         //隐藏滚动条
         this.sc_beibao.verticalScrollBar.autoVisibility = false;
         this.sc_beibao.verticalScrollBar.visible = false;
@@ -35,12 +32,9 @@ public static instance:Scene = null;
         this.show()
     }
     private onTapBeibaoBtn(){
-
-        console.log(this.listdataArr,this.checkBoxArr,this.checkBoxArr.length,this.listdataArr[0].id);
-
         var string = '';
-        for(var i=0;i<this.checkBoxArr.length-1;i++){
-            if(this.checkBoxArr[i].itemCheckBox.selected){
+        for(var i=0;i<this.listdataArr.length;i++){
+            if(this.listdataArr[i].selected){
                 console.log(i);
                 string +=this.listdataArr[i].id+',';
             }
@@ -54,12 +48,12 @@ public static instance:Scene = null;
     }
     private show(){
         this.listdataArr = [
-            {id:1,img:'item_png',name:'糖豆车1'},
-            {id:2,img:'item_png',name:'糖豆车2'},
-            {id:3,img:'item_png',name:'糖豆车3'},
-            {id:4,img:'item_png',name:'糖豆车4'},
-            {id:5,img:'item_png',name:'糖豆车5'},
-            {id:6,img:'item_png',name:'糖豆车6'}
+            {id:1,img:'item_png',name:'糖豆车1',selected:false},
+            {id:2,img:'item_png',name:'糖豆车2',selected:false},
+            {id:3,img:'item_png',name:'糖豆车3',selected:false},
+            {id:4,img:'item_png',name:'糖豆车4',selected:false},
+            {id:5,img:'item_png',name:'糖豆车5',selected:false},
+            {id:6,img:'item_png',name:'糖豆车6',selected:false}
         ]
         this.beibao.dataProvider = new eui.ArrayCollection(this.listdataArr);
         this.beibao.itemRenderer = ItemRender;
@@ -68,12 +62,9 @@ public static instance:Scene = null;
     private allCheckbox(e:eui.UIEvent){
         let checkBox:eui.CheckBox = e.target;
 		console.log(checkBox.selected);   //选中时true ，未选中时false
-        for(var i=0;i<this.checkBoxArr.length;i++){
-            this.checkBoxArr[i].changeStatus(checkBox.selected)
-            console.log(this.checkBoxArr[i],this.checkBoxArr[i].itemCheckBox.selected)
+        for(var i=0;i<this.listdataArr.length;i++){
+            this.listdataArr[i].selected = checkBox.selected;
+            this.beibao.dataProvider = new eui.ArrayCollection(this.listdataArr);
         }
-        
-
-
     }
 }

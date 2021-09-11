@@ -9,8 +9,7 @@ class ItemRender extends eui.ItemRenderer{
     }
 
     public childrenCreated(){
-        Scene.instance.checkBoxArr.push(this);
-        console.log(222);
+        
     }
 
 
@@ -19,22 +18,26 @@ class ItemRender extends eui.ItemRenderer{
     }
     
     public dataChanged():void{
+        this.itemCheckBox.selected = this.data.selected;
     }
 
     public check(e:eui.UIEvent){
         let checkBox:eui.CheckBox = e.target;
 		console.log(checkBox.selected);   //选中时true ，未选中时false
-        console.log(Scene.instance.checkBoxArr);
-
-
+        //设置单个状态
+        for(var i=0;i<Scene.instance.listdataArr.length;i++){
+            if(Scene.instance.listdataArr[i].id == this.data.id){
+               Scene.instance.listdataArr[i].selected = checkBox.selected;
+            }
+        }
+        //检测是否全选中
         var all = true;
-        for(var i=0;i<Scene.instance.checkBoxArr.length-1;i++){
-            if(!Scene.instance.checkBoxArr[i].itemCheckBox.selected){
+        for(var i=0;i<Scene.instance.listdataArr.length;i++){
+            if(!Scene.instance.listdataArr[i].selected){
                 all = all&&false;
             }
         }
         Scene.instance.all.selected = all;
-
     }
     public changeStatus(status){
         this.itemCheckBox.selected = status;
